@@ -1,0 +1,8 @@
+absolufy-imports
+black
+flake8
+flit
+pre-commit
+pylint
+pyyaml
+selenium
