@@ -5,6 +5,10 @@
 
 Automate UCheck COVID-19 self-assessment form submission.
 
+<p align="center">
+    <img src="documentation/ucheck_demo.gif">
+</p>
+
 ## Disclaimer
 
 * ucheck automatically completes the University of Tornto's UCheck COVID-19 self-assessment form as follows:
@@ -66,7 +70,7 @@ if __name__ == "__main__":
     # Set invalid user login credentials.
     utorid_login = "invalid-login"
     utorid_password = os.environ["UTORID_PASS"]
-    with UCheck(Chrome, Service, "/opt/WebDriver/bin/chromedriver") as ucheck:
+    with UCheck(Chrome, Service, driver_path="/opt/WebDriver/bin/chromedriver") as ucheck:
         try:
             ucheck.complete_ucheck(utorid_login, utorid_password)
         except InvalidUTORidLogin as e:
