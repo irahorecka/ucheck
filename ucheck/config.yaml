@@ -3,11 +3,11 @@ constants:
   elements:
     abs-xpath:
       button:
-        ucheck-form-submit: /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/div/button
+        ucheck-submit: /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/div/button
       input:
         utorid-user: /html/body/div/div/div[1]/div[2]/form/div[1]/input
         utorid-pass: /html/body/div/div/div[1]/div[2]/form/div[2]/input
-        ucheck-form:
+        ucheck-forms:
           - /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/form/div[6]/div/div/div/div/div/div/div/div/fieldset/label[2]/input
           - /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/form/div[8]/div/div/div/div/div/div/div/div/fieldset/label[1]/input
           - /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/form/div[10]/div/div/div/div/div/div/div/div/fieldset/label[1]/input

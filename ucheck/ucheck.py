@@ -44,11 +44,11 @@ class UCheck:
 
     def complete_ucheck(self, utorid_user, utorid_pass):
         """Public method that 1) Logs into UCheck portal using UTORid credentials,
-        2) Completes UCheck form to allow user to physically come onsite to campus,
-        3) Submits the completed UCheck form."""
+        2) Completes UCheck forms to allow user to physically come onsite to campus,
+        3) Submits the completed UCheck."""
         self._login_to_portal(utorid_user, utorid_pass)
-        self._complete_ucheck_form()
-        self._submit_ucheck_form()
+        self._complete_ucheck_forms()
+        self._submit_ucheck()
 
     def _login_to_portal(self, utorid_user, utorid_pass):
         """Logs into UCheck portal using UTORid credentials. Raise exception if credentials
@@ -84,9 +84,9 @@ class UCheck:
             except NoSuchElementException:
                 pass
 
-    def _complete_ucheck_form(self):
-        """Completes UCheck form to allow user to physically come onto campus."""
-        ucheck_forms = ELEMENTS_ABSXPATH["input"]["ucheck-form"]
+    def _complete_ucheck_forms(self):
+        """Completes UCheck forms to allow user to physically come onsite to campus."""
+        ucheck_forms = ELEMENTS_ABSXPATH["input"]["ucheck-forms"]
         for form in ucheck_forms:
             self._click_radio_button(form)
 
@@ -96,9 +96,7 @@ class UCheck:
         radio_button = wait.until(ElementLocator((By.XPATH, form_xpath)))
         self.driver.execute_script("arguments[0].click();", radio_button)
 
-    def _submit_ucheck_form(self):
-        """Submits the completed UCheck form."""
-        submit = self.driver.find_element(
-            By.XPATH, ELEMENTS_ABSXPATH["button"]["ucheck-form-submit"]
-        )
+    def _submit_ucheck(self):
+        """Submits the completed UCheck."""
+        submit = self.driver.find_element(By.XPATH, ELEMENTS_ABSXPATH["button"]["ucheck-submit"])
         submit.send_keys(Keys.RETURN)
