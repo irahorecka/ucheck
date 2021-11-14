@@ -1,3 +1,11 @@
+"""
+ucheck.utils
+~~~~~~~~~~~~
+
+Provides utility class(es) and function(s) for ucheck.ucheck.
+"""
+
+
 class ElementLocator:
     """
     An expectation for checking that an element has a particular locator (e.g., absolute XPath).

@@ -1,3 +1,11 @@
+"""
+ucheck.ucheck
+~~~~~~~~~~~~~
+
+Handles the interface with the University of Toronto's UCheck COVID-19
+self-assessment form.
+"""
+
 from pathlib import Path
 
 import yaml
