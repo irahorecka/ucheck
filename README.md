@@ -30,7 +30,7 @@ $ pip install ucheck
 
 ## Requirements and setup
 
-This library uses [Selenium](https://selenium-python.readthedocs.io/) to complete the UCheck form. If you are new to Selenium, it takes ~5 minutes to download and set up your browser driver. View [how to download and configure a browser driver](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/). If you are on a Mac, [this Stackoverflow article](https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de) may help to allow your OS to use Selenium without running into OS-related security issues.
+This library uses [Selenium](https://selenium-python.readthedocs.io/) to complete the UCheck form. If you are new to Selenium, it takes ~5 minutes to download and set up your browser driver. View [how to download and configure a browser driver](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/). If you are on a Mac, [this Stackoverflow article](https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de) may help you in allowing your OS to use Selenium without running into OS-related security issues.
 
 ## ucheck is simple to use
 
@@ -46,16 +46,16 @@ from ucheck import UCheck
 if __name__ == "__main__":
     # E.g., Save UTORid login and password as environment variables.
     utorid_login = os.environ["UTORID_USER"]
-    utorid_password = os.environ["UTORID_PASS"]
+    utorid_pass = os.environ["UTORID_PASS"]
     with UCheck(Chrome, Service, driver_path="/opt/WebDriver/bin/chromedriver") as ucheck:
-        ucheck.complete_ucheck(utorid_login, utorid_password)
+        ucheck.complete_ucheck(utorid_login, utorid_pass)
         # Briefly keep browser window open before closing.
         time.sleep(5)
 ```
 
 ## Exceptions
 
-Valid UTORid credentials are required to use ucheck.
+Valid UTORid credentials are required to complete your UCheck form.
 
 ```python
 import os
@@ -69,10 +69,10 @@ from ucheck.exceptions import InvalidUTORidLogin
 if __name__ == "__main__":
     # Set invalid user login credentials.
     utorid_login = "invalid-login"
-    utorid_password = os.environ["UTORID_PASS"]
+    utorid_pass = os.environ["UTORID_PASS"]
     with UCheck(Chrome, Service, driver_path="/opt/WebDriver/bin/chromedriver") as ucheck:
         try:
-            ucheck.complete_ucheck(utorid_login, utorid_password)
+            ucheck.complete_ucheck(utorid_login, utorid_pass)
         except InvalidUTORidLogin as e:
             print(e)
 ```
