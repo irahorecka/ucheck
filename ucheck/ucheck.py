@@ -60,16 +60,21 @@ class UCheck:
 
     def _validate_login_to_portal(self):
         """Validates successful login via UTORid portal."""
-        try:
-            self.driver.find_element(
-                By.XPATH,
-                f"{ELEMENTS_ABSXPATH['p']['invalid-utorid-login']}[contains(text(), '{KEYWORDS['contains']['invalid-utorid-login']}')]",
-            )
-            raise InvalidUTORidLogin(
-                "Invalid UTORid credentials. Please verify your UTORid login and password then try again."
-            )
-        except NoSuchElementException:
-            pass
+        for invalid_login_type, invalid_login_keyword in [
+            (k, v)
+            for keyword in KEYWORDS["contains"]["invalid-utorid-login"]
+            for (k, v) in keyword.items()
+        ]:
+            try:
+                self.driver.find_element(
+                    By.XPATH,
+                    f"{ELEMENTS_ABSXPATH['p']['invalid-utorid-login']}[contains(text(), '{invalid_login_keyword}')]",
+                )
+                raise InvalidUTORidLogin(
+                    f"Invalid UTORid credentials. Please verify your UTORid {invalid_login_type} then try again."
+                )
+            except NoSuchElementException:
+                pass
 
     def _complete_ucheck_form(self):
         """Completes UCheck form to allow user to physically come onto campus."""
