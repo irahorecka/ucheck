@@ -1,0 +1,24 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "ucheck"
+dist-name = "ucheck"
+author = "Ira Horecka"
+author-email = "ira89@icloud.com"
+home-page = "https://github.com/irahorecka/ucheck"
+description-file = "README.md"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.6"
+requires = ["selenium>=4.0.0", "PyYAML>=6.0"]
