@@ -1,6 +1,9 @@
+[![pypiv](https://img.shields.io/pypi/v/ucheck.svg)](https://pypi.python.org/pypi/ucheck)
+[![pypipv](https://img.shields.io/pypi/pyversions/ucheck.svg)](https://img.shields.io/pypi/pyversions/ucheck)
+
 # ucheck
 
-Automate UCheck COVID-19 self-assessments form submission.
+Automate UCheck COVID-19 self-assessment form submission.
 
 ## Disclaimer
 
