@@ -34,29 +34,28 @@ class UCheck:
     def __exit__(self, exc_type, exc_value, exc_traceback):
         self.driver.close()
 
-    def complete_ucheck(self, utorid_login, utorid_password):
-        """Simple public method to 1) Log into portal (using UTORid credentials),
-        2) Complete the UCheck form **to allow user to phsyically come on campus**,
-        3) Submit the UCheck form."""
-        self._login_to_portal(utorid_login, utorid_password)
+    def complete_ucheck(self, utorid_user, utorid_pass):
+        """Public method that 1) Logs into UCheck portal using UTORid credentials,
+        2) Completes the UCheck form to allow user to physically come onsite to campus,
+        3) Submits the completed UCheck form."""
+        self._login_to_portal(utorid_user, utorid_pass)
         self._complete_ucheck_form()
         self._submit_ucheck_form()
 
-    def _login_to_portal(self, utorid_login, utorid_password):
-        """Log into UCheck portal using UTORid credentials. Raise exception if credentials
+    def _login_to_portal(self, utorid_user, utorid_pass):
+        """Logs into UCheck portal using UTORid credentials. Raise exception if credentials
         are invalid."""
         self.driver.get(CONSTANTS["ucheck-url"])
         # Fill login credentials
-        login = self.driver.find_element(By.XPATH, ELEMENTS_ABSXPATH["input"]["utorid-login"])
+        login = self.driver.find_element(By.XPATH, ELEMENTS_ABSXPATH["input"]["utorid-user"])
         login.clear()
-        login.send_keys(utorid_login)
+        login.send_keys(utorid_user)
         # Fill password credentials
-        password = self.driver.find_element(By.XPATH, ELEMENTS_ABSXPATH["input"]["utorid-password"])
+        password = self.driver.find_element(By.XPATH, ELEMENTS_ABSXPATH["input"]["utorid-pass"])
         password.clear()
-        password.send_keys(utorid_password)
-        # Log in
+        password.send_keys(utorid_pass)
+        # Log in and validate login
         login.send_keys(Keys.RETURN)
-        # Validate login
         self._validate_login_to_portal()
 
     def _validate_login_to_portal(self):
@@ -64,29 +63,28 @@ class UCheck:
         try:
             self.driver.find_element(
                 By.XPATH,
-                f"{ELEMENTS_ABSXPATH['p']['invalid-utorid-login']}[contains(text(), '{KEYWORDS['contains']['invalid-utorid-login']}')]",
+                f"{ELEMENTS_ABSXPATH['p']['invalid-utorid-user']}[contains(text(), '{KEYWORDS['contains']['invalid-utorid-user']}')]",
             )
             raise InvalidUTORidLogin(
-                "Invalid UTORid credentials. Please verify your UTORid login and password and try again."
+                "Invalid UTORid credentials. Please verify your UTORid login and password then try again."
             )
         except NoSuchElementException:
             pass
 
     def _complete_ucheck_form(self):
-        """Clicks appropriate radio buttons to allow user to successfully complete the
-        UCheck form."""
-        ucheck_form_abs_xpaths = ELEMENTS_ABSXPATH["input"]["ucheck-form"]
-        for abs_expath in ucheck_form_abs_xpaths:
-            self._click_radio_button(abs_expath)
+        """Completes the UCheck form to allow user to physically come on campus."""
+        ucheck_forms = ELEMENTS_ABSXPATH["input"]["ucheck-form"]
+        for form in ucheck_forms:
+            self._click_radio_button(form)
 
-    def _click_radio_button(self, abs_xpath):
-        """Clicks radio button as provided by the absolute XPath."""
+    def _click_radio_button(self, form_xpath):
+        """Clicks a form's radio button as provided by the absolute XPath."""
         wait = WebDriverWait(self.driver, 10)
-        element = wait.until(ElementLocator((By.XPATH, abs_xpath)))
-        self.driver.execute_script("arguments[0].click();", element)
+        radio_button = wait.until(ElementLocator((By.XPATH, form_xpath)))
+        self.driver.execute_script("arguments[0].click();", radio_button)
 
     def _submit_ucheck_form(self):
-        """Submits completed UCheck form."""
+        """Submits the completed UCheck form."""
         submit = self.driver.find_element(
             By.XPATH, ELEMENTS_ABSXPATH["button"]["ucheck-form-submit"]
         )

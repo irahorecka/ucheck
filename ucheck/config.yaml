@@ -5,8 +5,8 @@ constants:
       button:
         ucheck-form-submit: /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/div/button
       input:
-        utorid-login: /html/body/div/div/div[1]/div[2]/form/div[1]/input
-        utorid-password: /html/body/div/div/div[1]/div[2]/form/div[2]/input
+        utorid-user: /html/body/div/div/div[1]/div[2]/form/div[1]/input
+        utorid-pass: /html/body/div/div/div[1]/div[2]/form/div[2]/input
         ucheck-form:
           - /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/form/div[6]/div/div/div/div/div/div/div/div/fieldset/label[2]/input
           - /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/form/div[8]/div/div/div/div/div/div/div/div/fieldset/label[1]/input
@@ -17,7 +17,7 @@ constants:
           - /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/form/div[18]/div/div/div/div/div/div/div/div/fieldset/label[1]/input
           - /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/form/div[20]/div/div/div/div/div/div/div/div/fieldset/label[1]/input
       p:
-        invalid-utorid-login: /html/body/div/div/div[1]/div[2]/section[1]/p
+        invalid-utorid-user: /html/body/div/div/div[1]/div[2]/section[1]/p
   keywords:
     contains:
-      invalid-utorid-login: cannot be identified
+      invalid-utorid-user: cannot be identified
