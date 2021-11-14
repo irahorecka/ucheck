@@ -1,5 +1,0 @@
-Selenium getting started:
-- https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/
-	Troubleshooting:
-	- How to allow Mac to use chromedriver exe (https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de)
-	- How to manually set path of chromedriver in Python application (see answer by user 'scmz') (https://stackoverflow.com/questions/28307469/chrome-driver-needs-to-be-available-in-the-path-error-on-mac)
