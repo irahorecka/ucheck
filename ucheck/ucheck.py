@@ -20,13 +20,13 @@ class UCheck:
     Handles the UTORid login and the filling and submission of the COVID-19 UCheck form.
 
     Arguments:
-    webdriver - Selenium webdriver class
-    webdriver_service - Child webdriver service class of webdriver
-    driver_path - Path to the webdriver executable
+    driver - Selenium webdriver class
+    driver_service - Child webdriver service class of driver
+    driver_path - Path to the webdriver executable (e.g. ChromeDriver)
     """
 
-    def __init__(self, webdriver, webdriver_service, driver_path):
-        self.driver = webdriver(service=webdriver_service(driver_path))
+    def __init__(self, driver, driver_service, driver_path):
+        self.driver = driver(service=driver_service(driver_path))
 
     def __enter__(self):
         return self
@@ -36,7 +36,7 @@ class UCheck:
 
     def complete_ucheck(self, utorid_user, utorid_pass):
         """Public method that 1) Logs into UCheck portal using UTORid credentials,
-        2) Completes the UCheck form to allow user to physically come onsite to campus,
+        2) Completes UCheck form to allow user to physically come onsite to campus,
         3) Submits the completed UCheck form."""
         self._login_to_portal(utorid_user, utorid_pass)
         self._complete_ucheck_form()
@@ -63,7 +63,7 @@ class UCheck:
         try:
             self.driver.find_element(
                 By.XPATH,
-                f"{ELEMENTS_ABSXPATH['p']['invalid-utorid-user']}[contains(text(), '{KEYWORDS['contains']['invalid-utorid-user']}')]",
+                f"{ELEMENTS_ABSXPATH['p']['invalid-utorid-login']}[contains(text(), '{KEYWORDS['contains']['invalid-utorid-login']}')]",
             )
             raise InvalidUTORidLogin(
                 "Invalid UTORid credentials. Please verify your UTORid login and password then try again."
@@ -72,7 +72,7 @@ class UCheck:
             pass
 
     def _complete_ucheck_form(self):
-        """Completes the UCheck form to allow user to physically come on campus."""
+        """Completes UCheck form to allow user to physically come onto campus."""
         ucheck_forms = ELEMENTS_ABSXPATH["input"]["ucheck-form"]
         for form in ucheck_forms:
             self._click_radio_button(form)
