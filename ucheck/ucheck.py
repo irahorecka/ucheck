@@ -51,7 +51,7 @@ class UCheck:
         self._submit_ucheck()
 
     def _login_to_portal(self, utorid_user, utorid_pass):
-        """Logs into UCheck portal using UTORid credentials. Raise exception if credentials
+        """Logs into UCheck portal using UTORid credentials. Raises exception if credentials
         are invalid."""
         self.driver.get(CONSTANTS["ucheck-url"])
         # Fill login credentials

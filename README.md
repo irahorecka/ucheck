@@ -3,7 +3,7 @@
 
 # ucheck
 
-Automate UCheck COVID-19 self-assessment form submission.
+Autosubmit your UCheck COVID-19 self-assessment form
 
 <p align="center">
     <img src="documentation/ucheck_demo.gif">
