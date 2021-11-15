@@ -29,7 +29,7 @@ class UCheck:
 
     Arguments:
     driver - Selenium webdriver class
-    driver_service - Child webdriver service class of driver
+    driver_service - Webdriver service class of driver
     driver_path - Path to the webdriver executable (e.g. ChromeDriver)
     """
 

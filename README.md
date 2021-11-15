@@ -20,7 +20,7 @@ Automate UCheck COVID-19 self-assessment form submission.
     * **NO**: "In the last 10 days, have you been identified as a "close contact" of someone who currently has COVID-19?"
     * **NO**: "In the last 14 days, have you received a COVID Alert exposure notification on your cell phone?"
     * **NO**: "In the last 10 days, have you tested positive on a rapid antigen test or home-based self-testing kit?"
-* If you do not satisfy these questions as listed, DO NOT use this library to complete your UCheck form. If you are interested in making these choices customizable, please raise an issue using the [issues tracker](https://github.com/irahorecka/ucheck/issues).
+* If you do not satisfy these questions as listed, DO NOT use this library to complete your UCheck form. If you're interested in making these choices customizable, please raise an issue using the [issues tracker](https://github.com/irahorecka/ucheck/issues).
 
 ## Installation
 
@@ -30,7 +30,7 @@ $ pip install ucheck
 
 ## Requirements and setup
 
-This library uses [Selenium](https://selenium-python.readthedocs.io/) to complete the UCheck form. If you are new to Selenium, it takes ~5 minutes to download and set up your browser driver. View [how to download and configure a browser driver](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/). If you are on a Mac, [this Stackoverflow article](https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de) may help you in allowing your OS to use Selenium without running into OS-related security issues.
+This library uses [Selenium](https://selenium-python.readthedocs.io/) to complete the UCheck form. If you're new to Selenium, it takes ~5 minutes to download and set up your browser driver. View [how to download and configure a browser driver](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/). If you're on MacOS and hit permission issues, check out [this Stackoverflow article](https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de).
 
 ## ucheck is simple to use
 
@@ -40,7 +40,6 @@ import time
 
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.service import Service
-
 from ucheck import UCheck
 
 if __name__ == "__main__":
@@ -62,7 +61,6 @@ import os
 
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.service import Service
-
 from ucheck import UCheck
 from ucheck.exceptions import InvalidUTORidLogin
 
@@ -79,7 +77,7 @@ if __name__ == "__main__":
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/irahorecka/ucheck/issues)
+- [Issues Tracker](https://github.com/irahorecka/ucheck/issues)
 - [Source Code](https://github.com/irahorecka/ucheck/tree/master/ucheck)
 
 ## Support
