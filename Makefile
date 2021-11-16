@@ -21,6 +21,5 @@ publish: ## Publish package distribution files to pypi
 	make clean;
 
 clean: ## Remove package distribution files and pycache
-	rm -rf ./pycraigslist.egg-info ./dist ./build;
+	rm -rf ./ucheck.egg-info ./dist ./build;
 	find . -type d -name "__pycache__" | xargs rm -r;
-	find . -type d -name ".pytest_cache" | xargs rm -r;
