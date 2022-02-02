@@ -13,12 +13,11 @@ Autosubmit your UCheck COVID-19 self-assessment form
 
 * ucheck automatically completes the University of Tornto's UCheck COVID-19 self-assessment form as follows:
     * **YES**: "Do any of the following statements apply to you? - I am fully vaccinated against COVID-19."
-    * **NO**: "Are you currently experiencing any of these symptoms? - Fever and/or chills (Temperature of 37.8 degrees Celsius/100 degrees Fahrenheit or higher)."
-    * **NO**: "Is anyone you live with currently experiencing any new COVID-19 symptoms and/or waiting for test results after experiencing symptoms?"
-    * **NO**: "In the last 14 days, have you travelled outside of Canada and been told to quarantine (per the federal quarantine requirements)?"
-    * **NO**: "Has a doctor, health care provider, or public health unit told you that you should currently be isolating (staying at home)?"
-    * **NO**: "In the last 10 days, have you been identified as a "close contact" of someone who currently has COVID-19?"
-    * **NO**: "In the last 14 days, have you received a COVID Alert exposure notification on your cell phone?"
+    * **NO**: "The symptoms listed here are the most commonly associated with COVID-19. Are you currently experiencing any of these symptoms?"
+    * **NO**: "In the last 10 days, has someone in your household experienced any COVID-19 symptoms and/or tested positive for COVID-19 (on a rapid antigen test or PCR test)?"
+    * **NO**: "In the last 14 days, have you travelled outside of Canada and been told to quarantine per the federal quarantine requirements?"
+    * **NO**: "In the last 10 days, have you been identified as a "close contact" of someone who currently has COVID-19 (confirmed by a PCR or rapid antigen test)?"
+    * **NO**: "In the last 10 days, have you received a COVID Alert exposure notification on your cell phone?"
     * **NO**: "In the last 10 days, have you tested positive on a rapid antigen test or home-based self-testing kit?"
 * If you do not satisfy these questions as listed, DO NOT use this library to complete your UCheck form. If you're interested in making these choices customizable, please raise an issue using the [issues tracker](https://github.com/irahorecka/ucheck/issues).
 
