@@ -4,7 +4,6 @@ constants:
     abs-xpath:
       button:
         ucheck-submit: /html/body/div[1]/div/div/div/div[2]/main/div/div/div/div/div/button
-
       input:
         utorid-user: /html/body/div/div/div[1]/div[2]/form/div[1]/input
         utorid-pass: /html/body/div/div/div[1]/div[2]/form/div[2]/input
