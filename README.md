@@ -29,7 +29,7 @@ pip install ucheck
 
 ## Requirements and setup
 
-This library uses [Selenium](https://selenium-python.readthedocs.io/) to complete the UCheck form. If you're new to Selenium, it takes ~5 minutes to download and set up your browser driver. View [how to download and configure a browser driver](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/). If you're on macOS and hit permission issues, check out [this Stackoverflow article](https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de).
+This library uses [Selenium](https://selenium-python.readthedocs.io/) to complete the UCheck form. If you're new to Selenium, it takes ~5 minutes to download and set up your browser driver. View how to [download and configure a browser driver](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/). If you're on macOS and hit permission issues, check out this [Stackoverflow article](https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de).
 
 ## ucheck is simple to use
 
