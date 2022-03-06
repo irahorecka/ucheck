@@ -15,7 +15,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 
 from ucheck.exceptions import InvalidUTORidLogin
-from ucheck.utils import ElementLocator
 
 with open(Path(__file__).absolute().parent / "config.yaml", "r", encoding="utf-8") as config:
     CONSTANTS = yaml.safe_load(config)["constants"]
@@ -100,3 +99,24 @@ class UCheck:
         """Submits the completed UCheck."""
         submit = self.driver.find_element(By.XPATH, ELEMENTS_ABSXPATH["button"]["ucheck-submit"])
         submit.send_keys(Keys.RETURN)
+
+
+class ElementLocator:
+    """
+    An expectation for checking that an element has a particular locator (e.g., absolute XPath).
+
+    Arguments:
+    locator - used to find the element
+
+    Returns:
+    WebElement once it finds the locator
+    """
+
+    def __init__(self, locator):
+        self.locator = locator
+
+    def __call__(self, driver):
+        element = driver.find_element(*self.locator)
+        if self.locator:
+            return element
+        return False
