@@ -16,7 +16,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 from ucheck.exceptions import InvalidUTORidLogin
 
-with open(Path(__file__).absolute().parent / "config.yaml", "r", encoding="utf-8") as config:
+with open(Path(__file__).resolve().parent / "config.yaml", "r", encoding="utf-8") as config:
     CONSTANTS = yaml.safe_load(config)["constants"]
 ELEMENTS_ABSXPATH = CONSTANTS["elements"]["abs-xpath"]
 KEYWORDS = CONSTANTS["keywords"]
