@@ -50,7 +50,7 @@ if __name__ == "__main__":
         time.sleep(5)
 ```
 
-## Set up a Cron job to execute ucheck
+## Set up a Cron job to run ucheck
 
 Here's an option to fully automate your Ucheck form submission. If you're on a *NIX computer, add the following lines to your cron configuration file:
 
@@ -62,8 +62,8 @@ SHELL=/bin/bash
 What the Cron job is doing:
 
 1. Everyday at 8 am
-2. Activate virtual environment to execute `ucheck_script/main.py`
-3. Execute `ucheck_script/main.py`, where `main.py` is the demo Python script posted above
+2. Activate virtual environment to run `ucheck_script/main.py`
+3. Run `ucheck_script/main.py`, where `main.py` is the demo Python script posted above
 
 You can find more information about setting up a Cron job [here](https://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job).
 
