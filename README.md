@@ -3,6 +3,11 @@
 [![pypiv](https://img.shields.io/pypi/v/ucheck.svg)](https://pypi.python.org/pypi/ucheck)
 [![pypipv](https://img.shields.io/pypi/pyversions/ucheck.svg)](https://img.shields.io/pypi/pyversions/ucheck)
 
+## This repository is now archived
+The University of Toronto is no longer requiring health screening prior to coming to campus.
+
+---
+
 Autosubmit your UCheck COVID-19 self-assessment form
 
 <p align="center">
