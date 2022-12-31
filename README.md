@@ -11,7 +11,7 @@ The University of Toronto is no longer requiring health screening prior to comin
 Autosubmit your UCheck COVID-19 self-assessment form
 
 <p align="center">
-    <img src="documentation/ucheck_demo.gif">
+    <img src="docs/ucheck_demo.gif">
 </p>
 
 ## Disclaimer
